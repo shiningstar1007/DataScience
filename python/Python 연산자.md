@@ -3,15 +3,17 @@
 ## 산술 연산자  
 | <center>연산자</center> | <center>사용 방법</center> | <center>설명</center>  
 |:--------:|:--------:|:--------:|      
-|**<center>+ [더하기]</center>** |  <center>2+3</center> |  <center>정수 2와 3을 더하기</center> |  
-|**<center>- [빼기]</center>** | <center>2-1</center> | <center>2에서 1을 빼기</center> |  
-|**<center>* [곱하기]</center>** | <center>2*3</center> | <center>2와 3을 곱하기</center> |  
-|**<center>** [제곱]</center>** |  <center>2**3</center> | <center>2의 3제곱</center> |  
-|**<center>/ [나누기]</center>** | <center>2/1</center> |  <center>2를 1로 나누기</center> |  
-|**<center>// [나누기(몫)]</center>** |  <center>2//1</center> |  <center>2를 1로 나눈 몫</center> |  
-|**<center>% [나머지값]</center>** | <center>2%1</center> |  <center>2를 1로 나눈 후 나머지 값</center> |  
+|**<center> + </center>** |  <center>2+3</center> |  <center>정수 2와 3을 더하기</center> |  
+|**<center> - </center>** | <center>2-1</center> | <center>2에서 1을 빼기</center> |  
+|**<center> * </center>** | <center>2*3</center> | <center>2와 3을 곱하기</center> |  
+|**<center> ** </center>** |  <center>2**3</center> | <center>2의 3제곱</center> |  
+|**<center> / </center>** | <center>2/1</center> |  <center>2를 1로 나누기</center> |  
+|**<center> // </center>** |  <center>2//1</center> |  <center>2를 1로 나눈 몫</center> |  
+|**<center> % </center>** | <center>2%1</center> |  <center>2를 1로 나눈 후 나머지 값</center> |  
 
-## 대입 연산자 (C/C++ 등의 언어에 있는 증가 연산자(++)나 감소 연산자(--)가 파이썬에서는 없다.)   
+## 대입 연산자   
+- C/C++ 등의 언어에 있는 증가 연산자(++)나 감소 연산자(--)가 파이썬에서는 없다.   
+
 | <center>연산자</center> | <center>사용 방법</center> | <center>설명</center>  
 |:--------:|:--------:|:--------:|      
 |**<center>=</center>** | <center>value = 3</center> | <center> value에 정수 3을 대입</center> |  
@@ -24,8 +26,9 @@
 |**<center>%=</center>** | <center>value %= 3</center> |  <center>value를 정수 3으로 나눈 후 나머지 값을 value에 대입</center> |  
 
 ## 관계 연산자 
-- 어떤 값이 크거나 작거나 같은지 비교하여 참(True),거짓(False)으로 표현
--  조건문(if) 또는 반복문(while) 같이 참,거짓을 필요로 할 때 사용
+- 어떤 값이 크거나 작거나 같은지 비교하여 참(True),거짓(False)으로 표현  
+- 조건문(if) 또는 반복문(while) 같이 참,거짓을 필요로 할 때 사용  
+
 | <center>연산자</center> | <center>사용 방법</center> | <center>설명</center>  
 |:--------:|:--------:|:--------:|      
 |**<center> ==</center>** | <center>value == 3</center> | <center>value와 3이 같으면 참, 아니면 거짓</center> |   
