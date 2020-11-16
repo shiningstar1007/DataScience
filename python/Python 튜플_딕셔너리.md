@@ -7,7 +7,7 @@
 - 튜플 전체를 삭제하는건 가능하다. (del 함수를 사용)  
 - 튜플 사용 방법은 리스트와 동일하다.  
 
-``python  
+```python  
 testTuple = (1,2,3)  
 print(testTuple)  
 
@@ -97,12 +97,13 @@ Output
 ```  
 
 - 세트(Set)를 가지고 교집합, 합집합, 차집합, 대칭 차집합을 구할 수 있다.   
+
 | <center>설명</center> | <center>기호</center> | <center>함수</center>    
 |:--------:|:--------:|:--------:|      
-|**<center>교집합</center>** |  <center> & </center> | <center>intersection</center> |   
-|**<center>합집합</center>** |  <center> | </center> | <center>union</center> |   
-|**<center>차집합</center>** |  <center> - </center> | <center>difference</center> |   
-|**<center>대칭 차집합</center>** |  <center> ^ </center> | <center>symmetric_difference</center> |   
+|**<center>교집합</center>** |  <center> '&' </center> | <center>intersection</center> |   
+|**<center>합집합</center>** |  <center> '|' </center> | <center>union</center> |   
+|**<center>차집합</center>** |  <center> '-' </center> | <center>difference</center> |   
+|**<center>대칭 차집합</center>** |  <center> '^' </center> | <center>symmetric_difference</center> |   
 
 ```Python  
 # 기호를 사용한 출력  
