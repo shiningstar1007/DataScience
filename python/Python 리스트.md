@@ -150,6 +150,56 @@ testList1 = [] // 값 전체가 삭제
 del(testList1) // testList1 자체가 삭제  
 ```  
 
+## 컴프리헨션(Comperhension)  
+- 값이 순차적인 리스트를 생성할 때 사용한다.  
+- 리스트 = [수식 for 변수명 range() if 조건식]  
+```python  
+# 리스트 = [수식 for 변수명 range()]  
+testList = []  
+testList = [number for number in range(1, 3)]  
+print(testList)  
+
+Output    
+[1, 2]  
+
+# 리스트 = [수식 for 변수명 range() if 조건식]  
+testList = []  
+testList = [number for number in range(1, 9) if number % 2 == 0]  
+print(testList)  
+
+Output    
+[2, 4, 6, 8]  
+```   
+
+## 리스트 복사  
+```python    
+# 얕은 복사(shallow copy)  
+# 동일한 메모리 공간을 공유한다.  
+oldList = ['사과','배','바나나']  
+newList = oldList  
+print(oldList)  
+newList[1] = '귤'  
+print(oldList)  
+
+Output  
+['사과', '배', '바나나']  
+['사과', '귤', '바나나']  
+
+# 깊은 복사(deep copy)  
+# 데이터 전체를 복사해서 새로 만든다.  
+oldList = ['사과','배','바나나']  
+newList = oldList[:]  
+print(oldList)  
+newList[1] = '귤'  
+print(oldList)  
+print(newList)  
+
+Output  
+['사과', '배', '바나나']  
+['사과', '배', '바나나']  
+['사과', '귤', '바나나']  
+```   
+
 ## 리스트 함수    
 | <center>함수</center> | <center>설명</center>  
 |:--------:|:--------:|      
