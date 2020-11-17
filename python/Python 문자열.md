@@ -23,7 +23,7 @@ Output
 - 함수는 단독으로 호출을 할 수 있다.  
 - 메서드는 객체에 기능이 들어가 있어서 객체.메서드() 형식으로 사용된다.  
 
-- 문자열 메서드 [대소문자 변환]  
+## 문자열 메서드 [대소문자 변환]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|      
 |**<center>upper()</center>** |  <center>모든 문자열을 대문자로 변환한다.</center> |   
@@ -45,7 +45,7 @@ pYTHON 문자열 tEST. 대소문자
 Python 문자열 Test. 대소문자  
 ```  
 
-- 문자열 메서드 [문자열 찾기]  
+## 문자열 메서드 [문자열 찾기]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|   
 |**<center>count()</center>** |  <center>문자열 내 특정 문자열이 몇개 있는지 찾을 때</center> |   
@@ -76,7 +76,7 @@ True False
 True  
 ```  
 
-- 문자열 메서드 [공백 삭제,변경]  
+## 문자열 메서드 [공백 삭제,변경]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|      
 |**<center>strip()</center>** |  <center>문자열 맨 앞과 뒤에 있는 공백 제거 또는 특정 문자를 삭제</center> |   
@@ -98,7 +98,7 @@ Output
 '---Python 문자열 테스트. 공백 삭제, 변경---'  
 ```  
 
-- 문자열 메서드 [분리, 결합, 대입]  
+## 문자열 메서드 [분리, 결합, 대입]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|      
 |**<center>split()</center>** |  <center>특정 문자 또는 공백을 기준으로 문자열을 잘라서 리스트에 저장</center> |   
@@ -130,7 +130,7 @@ P!y!t!h!o!n
 [2020, 11, 11]  
 ```  
 
-- 문자열 메서드 [정렬, 채우기]  
+## 문자열 메서드 [정렬, 채우기]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|      
 |**<center>center()</center>** |  <center>문자열 가운데 정렬</center> |   
@@ -154,7 +154,7 @@ Output
 '000000Python 문자열 Test. 정렬, 채우기'  
 ```  
 
-- 문자열 메서드 [문자열 구성 파악]  
+## 문자열 메서드 [문자열 구성 파악]  
 | <center>메서드</center> | <center>설명</center>  
 |:--------:|:--------:|      
 |**<center>isdigit()</center>** |  <center>해당 문자열이 전부 숫자로 되어 있으면 True, 아니면 False</center> |     
