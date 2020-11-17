@@ -98,7 +98,7 @@ Output
 
 - 세트(Set)를 가지고 교집합, 합집합, 차집합, 대칭 차집합을 구할 수 있다.   
 
-| <center>설명</center> | <center>기호</center> | <center>함수</center>    
+| <center>설명</center> | <center>기호</center> | <center>메서드</center>    
 |:--------:|:--------:|:--------:|      
 |**<center>교집합</center>** |  <center> & </center> | <center>intersection</center> |   
 |**<center>합집합</center>** |  <center> \| </center> | <center>union</center> |   
@@ -120,7 +120,7 @@ Output
 {'바나나', '사과'}  
 {'바나나', '감', '사과', '귤'}  
 
-# 함수를 사용한 출력  
+# 메서드를 사용한 출력  
 testSet1 = {'사과','배','바나나'}  
 testSet2 = {'감','배','귤'}  
 print(testSet1.intersection(testSet2))  
