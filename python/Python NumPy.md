@@ -125,7 +125,7 @@ Output
 - 타입 옆에 써있는 숫자는 단일 값을 메모리에 저장하는데 필요한 bit수 (1bypte는 8bit를 의미)  
 
 |  <center>데이터 형태</center> |  <center>타입</center> | <center>코드</center> |       
-|:--------:|:--------:|   
+|:--------:|:--------:|:--------:|   
 |**<center>bool 형</center>** | <center>bool</center> | <center> ? </center> |    
 |**<center>int 형</center>** | <center>int8, int16, int32, int64</center> | <center>i1, i2, i4, i8</center> |    
 |**<center>unsigned int형</center>** | <center>uint8, uint16, uint32, uint64</center> | <center>u1, u2, u4, u8</center> |    
@@ -259,6 +259,7 @@ Output
 
 ```python  
 # 1차원을 2차원 3차원으로 변환  
+import numpy as np   
 array1 = np.array([1,2,3,4,5,6,7,8])  
 print(array1)  
 
@@ -280,6 +281,7 @@ Output
   
 # 인자값에 -1을 넣으면 자동으로 계산하여 reshape  
 # 인자값에 -1은 하나만 넣어야 함  
+import numpy as np   
 array1 = np.array([1,2,3,4,5,6,7,8,9,10])  
 print(array1)  
 
@@ -300,6 +302,7 @@ Output
  [ 6  7  8  9 10]]  
 
 # 2차원을 1차원으로 변환  
+import numpy as np   
 array2 = np.array([[1,2,3,4],[5,6,7,8]])  
 print(array2)  
 
@@ -310,13 +313,3 @@ Output
  [5 6 7 8]]  
 [1 2 3 4 5 6 7 8]  
 ```  
-
-## ndarray - 인덱싱(indexing)  
-
-# 배열의 정렬 - sort()와 argsort()  
-
-- Numpy 응용  
-  - 선형대수 연산  
-  - 벡터화 연산  
-  - list와 ndarray 계산 성능  
-
