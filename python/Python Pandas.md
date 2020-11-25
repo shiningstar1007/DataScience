@@ -115,8 +115,8 @@ dtype: object
 
 가격           1000  
 생산일    2020-11-25  
-dtype: object  
-​```  
+dtype: object   
+```  
 
 ### DataFrame : 테이블 데이터 객체  
 - 테이블 형식으로 되어 있는 데이터를 DataFrame 라고 지칭함    
