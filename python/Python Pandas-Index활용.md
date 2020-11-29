@@ -34,6 +34,7 @@ Output
 
 ### NaN[Not a Number (Missing value)] : 결측값  
 - "어떤 값이 존재하지 않을 때" 를 지칭  
+
 |  <center>타입</center> |  <center>설명</center> |   
 |:--------:|:--------:|  
 |**<center>isnull()</center>** | <center>NaN이 있는지 여부(True/False)</center> |  
