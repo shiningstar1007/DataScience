@@ -29,9 +29,9 @@ print("np_sort_array:", np_sort_array)
 print("array1:", array1)  
 
 Output  
-array1: [1 3 2 5 7 6 8 4]  
-np_sort_array: [1 2 3 4 5 6 7 8]  
-array1: [1 3 2 5 7 6 8 4]  
+array1: [1 3 2 5 7 6 8 4]
+np_sort_array: [8 7 6 5 4 3 2 1]
+array1: [1 3 2 5 7 6 8 4]
 ```  
 
 ```python  
