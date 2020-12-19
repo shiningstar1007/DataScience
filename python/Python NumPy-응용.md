@@ -104,7 +104,8 @@ array1 = np.arange(ndarray_size)
 array2 = np.arange(ndarray_size)  
 
 startTime = time.time()  
-array3 = array1 + array2  
+for i in range(len(array1)) :  
+    array3[i] = array1[i]+array2[i]  
 print("Time : ", time.time() - startTime)  
 
 Output  
