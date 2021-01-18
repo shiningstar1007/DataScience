@@ -45,6 +45,25 @@
 |**<center> or </center>** | <center>(value1 == 3) or (value2 == 1)</center> | <center>조건 2개 중 하나만 참이면 참</center> |  
 |**<center> not </center>** | <center>not(value1 == 3)</center> | <center>해당 조건이 참이면 거짓, 거짓이면 참</center> | 
 
+## 논리 연산 우선순위
+not > and > or   
+
+b == 5 and c == 12 가 먼저 연산하고 난 결과와 a == 10 이 or 연산을 한다.   
+b는 5이지만 c는 12이므로 False 이지만, a는 10이므로 True가 되어 참   
+따라서 not이 가장 먼저 연산하고 그 다음에 and가 연산되고 마지막에 or가 연산된다.   
+
+```Python
+a = 10
+b = 5
+c = 13
+
+if a == 10 or b == 5 and c == 12 :
+    print("That is true")
+
+Output
+That is true
+```     
+
 ## 문자열을 숫자로 변경 하는 방법  
 int() : 문자열을 정수로 변환  
 float() : 문자열을 실수로 변환  
