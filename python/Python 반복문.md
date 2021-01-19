@@ -32,6 +32,93 @@ for문 반복 1회차
 for문 반복 2회차  
 ```  
 
+## index가 존재하는 문자열 또는 list의 for문을 활용한 출력방법  
+- 문자열을 for문을 이용하여 순회하면 1글자씩 접근 가능   
+- list를 for문을 이용하여 순회하면 1개씩 접근 가능   
+- 정수,소수는 불가능, 즉 index가 존재하는거만 가능   
+
+```python  
+# 문자열 순회
+data = 'hello python'
+for value in data:
+    print(value, end=' ')
+
+Output
+h e l l o   p y t h o n 
+
+# list 순회
+data = [10,20,30,40,50]
+for value in data:
+    print(value, end=' ')
+
+Output
+10 20 30 40 50 
+```  
+
+## dictionary의 for문을 활용한 출력방법   
+- dictionary를 순회 하게 되면 기본적으로 key값을 참조한다.   
+- keys() 함수를 이용하여 key 값만 순회 할 수 있다.   
+- values() 함수를 이용하여 value 값만 순회 할 수 있다.   
+- items() 함수를 이용하면 tuple 형태로 반환 되기 때문에 key, value 순회가 가능하다.   
+
+```python  
+# 기본적으로 순회 할 때
+dic_list = {'apple' : 2000, 'orange' : 3000, 'banana' : 4000}
+for key in dic_list:
+    print(key)
+
+Output
+apple
+orange
+banana
+
+# keys() 함수로 순회 할 때
+dic_list = {'apple' : 2000, 'orange' : 3000, 'banana' : 4000}
+for key in dic_list.keys():
+    print(key)
+
+Output
+apple
+orange
+banana
+
+# values() 함수로 순회 할 때
+dic_list = {'apple' : 2000, 'orange' : 3000, 'banana' : 4000}
+for key in dic_list.values():
+    print(key)
+
+Output
+2000
+3000
+4000
+
+# items() 함수로 순회 할 때
+dic_list = {'apple' : 2000, 'orange' : 3000, 'banana' : 4000}
+for key, value in dic_list.items():
+    print(key, value)
+
+Output
+apple 2000
+orange 3000
+banana 4000
+```  
+
+## for에서 index 사용하기  
+- 리스트를 순회 할 때 값만 추출함 (enumerate 함수 사용)  
+
+```python  
+data = [10,20,30,40,50]
+
+for index, num in enumerate(data):
+    print(index, num)
+
+Output
+0 10
+1 20
+2 30
+3 40
+4 50
+```  
 
 ## while 문 기본형식  
 - while문은 for문 처럼 반복 횟수를 결정하는 것과 다르게 조건식이 참이면 반복한다.  

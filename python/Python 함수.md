@@ -88,25 +88,67 @@ def testFunc() :
     pass  
 ```  
 
-## 매개변수에 기본값을 설정해 놓고 전달하는 방법  
-- 맨 마지막 매개변수 값은 default로 설정할 수 있다.  
+## Default parameter (기본 인자)
+- 함수의 파라미터에 기본값을 지정 할 수 있다.
+- 파라미터를 명시하지 않을 경우, 지정된 기본값을 사용한다.
+- 디폴트 파라미터 뒤에 일반 파라미터는 위치 할 수 없다. 즉 디폴트 파라미터는 뒤에 위치해야 한다.   
 
 ```python  
-def testFunc(param1, param2 = 0) :  
+def testFunc(param1 = 1, param2 = 2) :  
     retSum = param1 + param2  
     return retSum  
 
 hap = 0  
 
+hap = testFunc()  
+print("매개변수가 업을 때의 합 : %d" % hap) 
 hap = testFunc(20)  
 print("매개변수 1개일 때의 합 : %d" % hap)  
 hap = testFunc(20,30)  
 print("매개변수 2개일 때의 합 : %d" % hap)  
 
 Output  
-매개변수 1개일 때의 합 : 20  
+매개변수가 업을 때의 합 : 3
+매개변수 1개일 때의 합 : 22  
 매개변수 2개일 때의 합 : 50  
 ```  
+
+## Keyword Parameter  
+- 함수 호출 시 파라미터에 값을 전달 할 때, 파라미터의 이름을 명시하여 전달 할 수 있다.   
+- 파라미터의 이름을 명시해서 사용하면 순서에 상관없이 사용할 수 있다.   
+- 파라미터의 이름을 사용하지 않으면 순서대로 파라미터 값으로 전달 된다.  
+
+```python
+def testFunc(param1 = 1, param2 = 2) :  
+    retSum = param1 + param2  
+    return retSum  
+
+hap = 0  
+hap = testFunc(param2=10, param1=5)  
+print("testFunc : %d" % hap) 
+
+Output
+testFunc : 15
+```
+
+## Multiple Return  
+- python은 복수개의 값을 리턴 할 수 있다.  
+- 복수개를 리턴할 시 type은 tuple이다.  
+
+```python
+def multiReturn(param1 = 1, param2 = 2):
+    value1 = param1 + param2
+    value2 = param1 * param2
+    
+    return value1, value2
+
+data = multiReturn()
+print(type(data), data)
+
+Output
+<class 'tuple'> (3, 2)
+```
+
 
 # 모듈  
 - 표준 모듈, 사용자 정의 모듈, 서드파티(3rd party) 모듈로 구분한다.  
