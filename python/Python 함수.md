@@ -149,6 +149,18 @@ Output
 <class 'tuple'> (3, 2)
 ```
 
+## Lambda 함수 정의  
+- 단일문으로 표현되는 이름이 없고 구현체만 존재하는 익명 함수이다.  
+- 코드 상에서 한번만 사용되는 기능이 있을 때 사용한다.  
+- lambada 파라미터 : 리턴값  
+
+```python
+sumFunc = lambda param1, param2:param1+param2
+sumFunc(10,20)
+
+Output
+30
+```
 
 # 모듈  
 - 표준 모듈, 사용자 정의 모듈, 서드파티(3rd party) 모듈로 구분한다.  
