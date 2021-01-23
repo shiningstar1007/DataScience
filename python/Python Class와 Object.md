@@ -128,9 +128,112 @@ Output
 30, 80
 ```
 
+## Class Inheritance (클래스 상속)
+- 기존에 정의한 클래스의 기능을 그대로 물려 받는걸 말한다.
+- 기존 클래스에 기능 일부를 추가하거나, 변경하여 새로운 클래스를 정의한다.
+- 코드를 재사용할 수 있게 된다.
+- 상속 받고자 하는 대상인 기존 클래스는 (Parent, Super, Base Class 라고 부른다.)
+
+```python
+class parentClass:
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def study(self, hours):
+        print("{}은 {}시간동안 공부를 합니다.".format(self.name, hours))
+        
+class childClass(parentClass): #클래스명(상속받을 클래스명): 
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+    
+child = childClass('tom', 'korea')
+child.study(5)
+
+Output
+tom은 5시간동안 공부를 합니다.
+```
+
+## Method override  
+- 부모 클래스의 Method를 재정의(Override)  
+- 자식 클래스의 인스턴스로 호출 시, 재정의 된 메서드가 호출 된다.  
+- Method를 재정의 하면 부모 클래스의 Method는 호출 할 수 없게 된다.  
+- 재정의 된 메서드에서 부모 클래스의 메서드를 호출 하고 싶을 땐 super 를 사용한다.  
+
+```python
+class parentClass:
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def study(self, hours):
+        print("{}은 {}시간동안 공부를 합니다.".format(self.name, hours))
+        
+class childClass(parentClass): #클래스명(상속받을 클래스명): 
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def study(self, hours): #메서드 재정의
+        print("{}은 {}시간동안 일을 합니다.".format(self.name, hours))
+    
+child = childClass('tom', 'korea')
+child.study(5)
+
+Output
+tom은 5시간동안 일을 합니다.
+
+
+class parentClass:
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def study(self, hours):
+        print("{}은 {}시간동안 공부를 합니다.".format(self.name, hours))
+        
+class childClass(parentClass): #클래스명(상속받을 클래스명): 
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def study(self, hours): #메서드 재정의
+        print("{}은 {}시간동안 일을 합니다.".format(self.name, hours))
+        super().study(hours) #부모 클래스의 메서드 호출
+        
+child = childClass('tom', 'korea')
+child.study(5)
+
+Output
+tom은 5시간동안 일을 합니다.
+tom은 5시간동안 공부를 합니다.
+```
+
+## Class 연산자 재정의 (Special Method)   
+- __로 시작하여 __로 끝나는 특수 함수  
+- 해당 메서드들을 재정의하면, 여러가지 파이썬 내장 함수나 연산자를 적용 할 수 있다.  
+- 오버라이딩 가능한 함수 목록 링크   
+  - https://docs.python.org/3/reference/datamodel.html   
+
+```python
+class overrideClass:
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+        
+    def __str__(self):
+        return '({},{})'.format(self.name, self.nationality)
+    
+oc1 = overrideClass('tom', 'korea')
+print(oc1)
+
+Output
+(tom,korea)
+```
+
 ## Object  
 - Class로 생성되어 구체화 된 객체(인스턴스)  
 - Python에서 사용하는 string, int, list, dict 등 모든게 다 객체(인스턴스)  
 - 실제로 Class가 인스턴스화 되어 메모리에 상주하는 상태를 의미  
 - Class가 빵틀이라면, Object는 빵틀로 찍어낸 빵이라고 비유 할 수 있음  
-
