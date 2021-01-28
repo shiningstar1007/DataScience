@@ -146,4 +146,89 @@ print(soup.select('h3[class*="_"]'))  #속성값 substring 찾기 [name *='test]
 print(soup.select('span.txt_info:nth-child(1)')) #n번째 자식 tag 찾기 :nth-child(n)
 ```
 
+## 정규표현식으로 tag 찾기  
 
+```python
+import re
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://news.v.daum.net/v/20210125201340317'
+resp = requests.get(url)
+soup = BeautifulSoup(resp.text)
+
+print(soup.find_all(re.compile('h\d')))
+print(soup.find_all('img', attrs = {'src' : re.compile('.+\.jpg')}))
+print(soup.find_all('h3', class_=re.compile('.+view$')))
+```
+
+## 댓글 개수 추출하기  
+ - 댓글의 경우, 최초 로딩시에 전달되지 않음  
+ - 이 경우는 추가적으로 AJAX로 비동기적 호출을 하여 따로 data 전송을 함  
+   - 개발자 도구의 network 탭에서 확인(XHR: XmlHTTPRequest)  
+   - 비동기적 호출: 사이트의 전체가 아닌 일부분만 업데이트 가능하도록 함  
+   - 4xx 오류 시 Request Headers 를 dict로 만들어서 파라미터로 넘겨서 사용한다.  
+
+### HTTP 상태 코드  
+ - 1xx (정보): 요청을 받았으며 프로세스를 계속한다  
+ - 2xx (성공): 요청을 성공적으로 받았으며 인식했고 수용하였다  
+ - 3xx (리다이렉션): 요청 완료를 위해 추가 작업 조치가 필요하다  
+ - 4xx (클라이언트 오류): 요청의 문법이 잘못되었거나 요청을 처리할 수 없다  
+ - 5xx (서버 오류): 서버가 명백히 유효한 요청에 대해 충족을 실패했다  
+[출처: 위키피디아](https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C)  
+
+```python
+import requests
+
+url = 'https://comment.daum.net/apis/v1/ui/single/main/@20210125201340317'
+
+headers = {
+	'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb3J1bV9rZXkiOiJuZXdzIiwiZ3JhbnRfdHlwZSI6ImFsZXhfY3JlZGVudGlhbHMiLCJzY29wZSI6W10sImV4cCI6MTYxMTg3NjQyOSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9DTElFTlQiXSwianRpIjoiNzUzMDhhN2QtODc2ZS00MDRmLWIzMjAtNmE3YmQ2MmYxYjBlIiwiZm9ydW1faWQiOi05OSwiY2xpZW50X2lkIjoiMjZCWEF2S255NVdGNVowOWxyNWs3N1k4In0.obOaZ3Uz1xfLfTRR1zYxIwdKBSxmwQuq51F9WzaWUGk',
+	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36',
+	'Origin': 'https://news.v.daum.net',
+	'Referer': 'https://news.v.daum.net/v/20210125201340317'
+}
+
+resp = requests.get(url, headers=headers)
+resp.json()['post']['commentCount'] #댓글 개수 추출
+```
+
+## 로그인 후 데이터 크롤링  
+
+- 실제 O마켓에 로그인해서 현재 내 포인트를 가져오기   
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+# 로그인 endpoint
+url = 'https://signinssl.gmarket.co.kr/LogIn/LogInProc'
+
+# id, password로 구성된 form data 생성하기
+data = {'id' : 'kys3631', 'pwd' : '********'}
+
+# 로그인 시도
+s = requests.Session()
+
+resp = s.post(url, data=data)
+print(resp)
+
+headers = {
+    'Referer': 'myg.gmarket.co.kr',
+    'Host': 'myg.gmarket.co.kr',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36',
+    'Cookie': 'pguid=***; sguid=***; jaehuid=***; charset=enUS; shipnation=KR; cguid=***; pcidx=***; PCIDJCN=***; isSFC=N; PCUID=***; WMONID=***; __RequestVerificationToken=***; user%5Finfo=safe%5Flogin=4&isMember=MEM&isDonatee=N&isZeroMargin=N&isEmailValid=Y&custType=PP&jaehuCustNo=TIxNR38jNzE2MczzNzY3OTU2Njh%2FRw%3D%3D&ageGroup=C&CR%5FType=I&corpIdNo=&clusterID=S000%3D0&toastYN=Y&pif=***&sif=***&ick=%***%3D&sbgid=***&time=2021%2D01%2D28+21%3A51%3A04&InterestGoodsCnt=0&InterestShopCnt=0&BuyShopCnt=8&jaehuPlatform=&adultAuth=***; ssguid=***'
+}
+
+my_page = 'http://myg.gmarket.co.kr/'
+resp = s.get(my_page, headers=headers)
+
+soup = BeautifulSoup(resp.text)
+
+smilepoint = soup.find('li', class_='smilepoint')
+point = smilepoint.find_all('span')
+point[1].get_text()
+
+Output
+849
+```
